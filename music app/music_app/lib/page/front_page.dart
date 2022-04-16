@@ -56,7 +56,10 @@ class FrontPage extends StatelessWidget {
     Widget desc() {
       return Center(
         child: Container(
-          margin: EdgeInsets.only(top: 20),
+          margin: EdgeInsets.only(
+            top: 20,
+            bottom: 50,
+          ),
           child: Text(
             "Learn by the lorem ipsum dolor sit amet, consectetur adispicing. ",
             style: BlacktextStyle.copyWith(
@@ -70,96 +73,91 @@ class FrontPage extends StatelessWidget {
     }
 
     Widget button() {
-      return Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          GestureDetector(
-            onTap: () {
-              Navigator.popAndPushNamed(context, '/home-page');
-            },
-            child: Container(
-              margin: EdgeInsets.only(
-                top: 50,
-                right: 30,
-                left: 30,
-              ),
-              width: 137,
-              height: 57,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xffCDDCF6),
-                    spreadRadius: 1,
-                    blurRadius: 80,
-                    offset: Offset(0, 30),
-                  )
-                ],
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xffCDDCF6),
-                    Color(0xffFFFFFF),
+      return Container(
+        margin: EdgeInsets.symmetric(
+          horizontal: 30,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.popAndPushNamed(context, '/home-page');
+              },
+              child: Container(
+                width: 137,
+                height: 57,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xffCDDCF6),
+                      spreadRadius: 1,
+                      blurRadius: 80,
+                      offset: Offset(0, 30),
+                    )
                   ],
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xffCDDCF6),
+                      Color(0xffFFFFFF),
+                    ],
+                  ),
                 ),
-              ),
-              child: Center(
-                child: Text(
-                  "Login",
-                  style: TextStyle(
-                    fontSize: 17,
-                    fontWeight: semiBold,
+                child: Center(
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: semiBold,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          GestureDetector(
-            onTap: () {
-              Navigator.popAndPushNamed(context, '/home-page');
-            },
-            child: Container(
-              margin: EdgeInsets.only(
-                top: 50,
-                right: 30,
-                left: 30,
-              ),
-              width: 137,
-              height: 57,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Color(0xff4624C2),
-                    spreadRadius: 1,
-                    blurRadius: 80,
-                    offset: Offset(0, 30),
-                  ),
-                ],
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xff7F5BFF),
-                    Color(0xff4624C2),
+            GestureDetector(
+              onTap: () {
+                Navigator.popAndPushNamed(context, '/home-page');
+              },
+              child: Container(
+                width: 137,
+                height: 57,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xff4624C2),
+                      spreadRadius: 1,
+                      blurRadius: 80,
+                      offset: Offset(0, 30),
+                    ),
                   ],
+                  gradient: LinearGradient(
+                    begin: Alignment.topRight,
+                    end: Alignment.bottomLeft,
+                    colors: [
+                      Color(0xff7F5BFF),
+                      Color(0xff4624C2),
+                    ],
+                  ),
                 ),
-              ),
-              child: Center(
-                child: Text(
-                  "Sign up",
-                  style: TextStyle(
-                    color: Color(0xffFFFFFF),
-                    fontSize: 17,
-                    fontWeight: semiBold,
+                child: Center(
+                  child: Text(
+                    "Sign up",
+                    style: TextStyle(
+                      color: Color(0xffFFFFFF),
+                      fontSize: 17,
+                      fontWeight: semiBold,
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       );
     }
 
