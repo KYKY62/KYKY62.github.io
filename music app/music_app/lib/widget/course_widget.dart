@@ -21,9 +21,16 @@ class CourseWidget extends StatelessWidget {
         vertical: 13,
       ),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(15),
-        color: Color(0xffffffff),
-      ),
+          borderRadius: BorderRadius.circular(15),
+          gradient: LinearGradient(
+            colors: [
+              Color(0xffF0F5FF),
+              Color(0xffF2F6FF),
+              Color(0xffAEBEDF),
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomRight,
+          )),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

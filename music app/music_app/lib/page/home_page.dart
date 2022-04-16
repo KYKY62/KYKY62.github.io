@@ -108,7 +108,7 @@ class HomePage extends StatelessWidget {
               icon: Icon(
                 Icons.home_outlined,
                 color: pageProvider.currentIndex == 0
-                    ? Color(0xff5B38D8)
+                    ? Color.fromARGB(255, 28, 0, 128)
                     : Color(0xff808191),
               ),
               label: '',

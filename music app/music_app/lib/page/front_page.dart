@@ -88,6 +88,14 @@ class FrontPage extends StatelessWidget {
               height: 57,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xffCDDCF6),
+                    spreadRadius: 1,
+                    blurRadius: 80,
+                    offset: Offset(0, 30),
+                  )
+                ],
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
@@ -122,6 +130,14 @@ class FrontPage extends StatelessWidget {
               height: 57,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color(0xff4624C2),
+                    spreadRadius: 1,
+                    blurRadius: 80,
+                    offset: Offset(0, 30),
+                  ),
+                ],
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
@@ -156,6 +172,7 @@ class FrontPage extends StatelessWidget {
                 content(),
                 desc(),
                 button(),
+                SizedBox(height: 40),
               ],
             ),
           ],
