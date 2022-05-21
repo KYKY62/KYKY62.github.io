@@ -26,8 +26,8 @@ class _DescPageState extends State<DescPage> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'assets/ss.png',
-                    width: 800,
+                    'assets/c1.png',
+                    width: double.infinity,
                   ),
                 ),
                 Positioned(
@@ -45,7 +45,7 @@ class _DescPageState extends State<DescPage> {
                           icon: Icon(
                             Icons.arrow_back,
                             size: 20,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         IconButton(
@@ -53,7 +53,7 @@ class _DescPageState extends State<DescPage> {
                           icon: Icon(
                             Icons.favorite_border,
                             size: 20,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         )
                       ],
@@ -64,7 +64,7 @@ class _DescPageState extends State<DescPage> {
                   left: 20,
                   bottom: 10,
                   child: BlurryContainer(
-                    width: 250,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     height: 100,
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white.withOpacity(0.15),
@@ -76,7 +76,7 @@ class _DescPageState extends State<DescPage> {
                           Text(
                             "Cappucino",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),
@@ -85,7 +85,7 @@ class _DescPageState extends State<DescPage> {
                           Text(
                             "With Sprinkle Cinnamon Powder",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 12,
                             ),
                           ),
@@ -105,20 +105,20 @@ class _DescPageState extends State<DescPage> {
                                     color: Colors.amber,
                                   );
                                 },
-                                unratedColor: Colors.white,
+                                unratedColor: Colors.black54,
                                 onRatingUpdate: (rating) {},
                               ),
                               SizedBox(width: 10),
                               Icon(
                                 Icons.person_sharp,
                                 size: 12,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                               SizedBox(width: 4),
                               Text(
                                 "304",
                                 style: TextStyle(
-                                    fontSize: 12, color: Colors.white),
+                                    fontSize: 12, color: Colors.black),
                               ),
                             ],
                           )

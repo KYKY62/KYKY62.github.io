@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Container(
                   // width: double.infinity,
-                  width: 270,
+                  width: MediaQuery.of(context).size.width * 0.78,
                   height: 40,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -167,9 +167,18 @@ class _HomePageState extends State<HomePage> {
                           child: Row(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              CappucinoCategories(),
-                              CappucinoCategories(),
-                              CappucinoCategories(),
+                              CappucinoCategories(
+                                name: "Cappucino",
+                                desc: "With Almond Milk",
+                                price: "\$4.98",
+                                gambar: "assets/c1.png",
+                              ),
+                              CappucinoCategories(
+                                name: "Cappucino",
+                                desc: "With Soy Milk",
+                                price: "\$5.14",
+                                gambar: "assets/c2.png",
+                              )
                             ],
                           ),
                         ),
@@ -202,8 +211,12 @@ class _HomePageState extends State<HomePage> {
                             ],
                           ),
                         ),
-                        SpecialOffersWidget(),
-                        SpecialOffersWidget(),
+                        SpecialOffersWidget(
+                          gambar: "assets/c1.png",
+                        ),
+                        SpecialOffersWidget(
+                          gambar: "assets/c2.png",
+                        ),
                       ],
                     ),
                   ),

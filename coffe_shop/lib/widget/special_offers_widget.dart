@@ -1,11 +1,11 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 
 class SpecialOffersWidget extends StatelessWidget {
-  const SpecialOffersWidget({
-    Key? key,
-  }) : super(key: key);
+  final gambar;
+
+  SpecialOffersWidget({this.gambar});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +13,7 @@ class SpecialOffersWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       child: Container(
         width: double.infinity,
+        height: MediaQuery.of(context).size.width * 0.3,
         decoration: BoxDecoration(
           color: Color(0xffFFF6EA),
           borderRadius: BorderRadius.circular(12),
@@ -29,8 +30,9 @@ class SpecialOffersWidget extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
-                  'assets/ss.png',
-                  width: 160,
+                  gambar,
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  // height: 100,
                 ),
               ),
             ),
