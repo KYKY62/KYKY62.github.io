@@ -1,13 +1,13 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
+// ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
+import 'package:coffe_shop/provider/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:provider/provider.dart';
 import 'package:readmore/readmore.dart';
 
 class DescPage extends StatefulWidget {
-  const DescPage({Key? key}) : super(key: key);
-
   @override
   State<DescPage> createState() => _DescPageState();
 }
@@ -15,6 +15,8 @@ class DescPage extends StatefulWidget {
 class _DescPageState extends State<DescPage> {
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Products>(context);
+
     Widget PictureDesc() {
       return Container(
         padding: EdgeInsets.all(10),
@@ -26,8 +28,8 @@ class _DescPageState extends State<DescPage> {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(20),
                   child: Image.asset(
-                    'assets/ss.png',
-                    width: 800,
+                    'assets/c1.png',
+                    width: double.infinity,
                   ),
                 ),
                 Positioned(
@@ -45,16 +47,23 @@ class _DescPageState extends State<DescPage> {
                           icon: Icon(
                             Icons.arrow_back,
                             size: 20,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.favorite_border,
-                            size: 20,
-                            color: Colors.white,
-                          ),
+                          color: product.isFavorite ? Colors.red : Colors.black,
+                          onPressed: () {
+                            product.btnFav();
+                          },
+                          icon: product.isFavorite
+                              ? Icon(
+                                  Icons.favorite,
+                                  size: 20,
+                                )
+                              : Icon(
+                                  Icons.favorite_border_outlined,
+                                  size: 20,
+                                ),
                         )
                       ],
                     ),
@@ -64,7 +73,7 @@ class _DescPageState extends State<DescPage> {
                   left: 20,
                   bottom: 10,
                   child: BlurryContainer(
-                    width: 250,
+                    width: MediaQuery.of(context).size.width * 0.7,
                     height: 100,
                     borderRadius: BorderRadius.circular(20),
                     color: Colors.white.withOpacity(0.15),
@@ -76,7 +85,7 @@ class _DescPageState extends State<DescPage> {
                           Text(
                             "Cappucino",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),
@@ -85,7 +94,7 @@ class _DescPageState extends State<DescPage> {
                           Text(
                             "With Sprinkle Cinnamon Powder",
                             style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 12,
                             ),
                           ),
@@ -105,20 +114,20 @@ class _DescPageState extends State<DescPage> {
                                     color: Colors.amber,
                                   );
                                 },
-                                unratedColor: Colors.white,
+                                unratedColor: Colors.black54,
                                 onRatingUpdate: (rating) {},
                               ),
                               SizedBox(width: 10),
                               Icon(
                                 Icons.person_sharp,
                                 size: 12,
-                                color: Colors.white,
+                                color: Colors.black,
                               ),
                               SizedBox(width: 4),
                               Text(
                                 "304",
                                 style: TextStyle(
-                                    fontSize: 12, color: Colors.white),
+                                    fontSize: 12, color: Colors.black),
                               ),
                             ],
                           )

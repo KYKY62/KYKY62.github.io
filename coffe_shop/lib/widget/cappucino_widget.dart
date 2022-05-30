@@ -1,11 +1,19 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:flutter/material.dart';
 
 class CappucinoCategories extends StatelessWidget {
-  const CappucinoCategories({
-    Key? key,
-  }) : super(key: key);
+  final String name;
+  final String desc;
+  final String price;
+  final String gambar;
+
+  CappucinoCategories({
+    required this.name,
+    required this.desc,
+    required this.price,
+    required this.gambar,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +38,19 @@ class CappucinoCategories extends StatelessWidget {
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
                 ),
-                child: Image.asset('assets/ss.png'),
+                child: Center(
+                  child: Image.asset(
+                    gambar,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    height: 100,
+                  ),
+                ),
               ),
               SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Text(
-                  "Cappucino",
+                  name,
                   style: TextStyle(
                       color: Colors.brown,
                       fontSize: 18,
@@ -47,7 +61,7 @@ class CappucinoCategories extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Text(
-                  "With Almond Milk",
+                  desc,
                   style: TextStyle(
                       color: Colors.brown,
                       fontSize: 12,
@@ -62,7 +76,7 @@ class CappucinoCategories extends StatelessWidget {
                     child: Container(
                       margin: EdgeInsets.only(left: 5),
                       child: Text(
-                        "\$4.98",
+                        price,
                         style: TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),

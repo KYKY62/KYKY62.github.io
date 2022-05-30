@@ -2,10 +2,16 @@
 
 import 'package:coffe_shop/pages/desc_page.dart';
 import 'package:coffe_shop/pages/main_page.dart';
+import 'package:coffe_shop/provider/product_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
   runApp(const MyApp());
 }
 
@@ -14,12 +20,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => PageProvider(),
-        )
-      ],
+    return ChangeNotifierProvider(
+      create: (context) => Products(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
@@ -28,15 +30,5 @@ class MyApp extends StatelessWidget {
         },
       ),
     );
-  }
-}
-
-class PageProvider with ChangeNotifier {
-  int _currentIndex = 0;
-
-  int get currentIndex => _currentIndex;
-  set currentIndex(int index) {
-    _currentIndex = index;
-    notifyListeners();
   }
 }

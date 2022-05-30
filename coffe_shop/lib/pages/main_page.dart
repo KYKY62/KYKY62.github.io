@@ -108,31 +108,6 @@ class _MainPageState extends State<MainPage> {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xffEDE6DB),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Color(0xffEDE6DB),
-        leading: Container(
-          margin: EdgeInsets.only(left: 20),
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            // color: Colors.red,
-            image: DecorationImage(
-              image: AssetImage('assets/ss.png'),
-              fit: BoxFit.cover,
-            ),
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.notification_important_outlined,
-              color: Colors.black,
-            ),
-          ),
-        ],
-      ),
       bottomNavigationBar: CustomNavBar(),
       body: Body(),
     );
