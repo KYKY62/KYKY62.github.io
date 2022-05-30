@@ -1,11 +1,21 @@
+<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_typing_uninitialized_variables, prefer_const_constructors_in_immutables
+=======
+// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+>>>>>>> 7e6a9bc91dc1b2ea39519c3a5d2dbbd5c54c29d6
 
 import 'package:flutter/material.dart';
 
 class SpecialOffersWidget extends StatelessWidget {
+<<<<<<< HEAD
   final String gambar;
 
   SpecialOffersWidget({required this.gambar});
+=======
+  final gambar;
+
+  SpecialOffersWidget({this.gambar});
+>>>>>>> 7e6a9bc91dc1b2ea39519c3a5d2dbbd5c54c29d6
 
   @override
   Widget build(BuildContext context) {

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 
 class CappucinoCategories extends StatelessWidget {
+<<<<<<< HEAD
   final String name;
   final String desc;
   final String price;
@@ -14,6 +15,14 @@ class CappucinoCategories extends StatelessWidget {
     required this.price,
     required this.gambar,
   });
+=======
+  final name;
+  final desc;
+  final price;
+  final gambar;
+
+  CappucinoCategories({this.name, this.desc, this.price, this.gambar});
+>>>>>>> 7e6a9bc91dc1b2ea39519c3a5d2dbbd5c54c29d6
 
   @override
   Widget build(BuildContext context) {

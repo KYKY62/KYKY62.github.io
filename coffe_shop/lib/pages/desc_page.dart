@@ -51,6 +51,7 @@ class _DescPageState extends State<DescPage> {
                           ),
                         ),
                         IconButton(
+<<<<<<< HEAD
                           color: product.isFavorite ? Colors.red : Colors.black,
                           onPressed: () {
                             product.btnFav();
@@ -64,6 +65,14 @@ class _DescPageState extends State<DescPage> {
                                   Icons.favorite_border_outlined,
                                   size: 20,
                                 ),
+=======
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.favorite_border,
+                            size: 20,
+                            color: Colors.black,
+                          ),
+>>>>>>> 7e6a9bc91dc1b2ea39519c3a5d2dbbd5c54c29d6
                         )
                       ],
                     ),
