@@ -108,6 +108,7 @@ class _MainPageState extends State<MainPage> {
     }
 
     return Scaffold(
+      backgroundColor: Color(0xffEDE6DB),
       bottomNavigationBar: CustomNavBar(),
       body: Body(),
     );
