@@ -58,9 +58,11 @@ class CappucinoCategories extends StatelessWidget {
                 child: Text(
                   desc,
                   style: TextStyle(
-                      color: Colors.brown,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w300),
+                    color: Colors.brown,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ),
               SizedBox(height: 15),
