@@ -8,7 +8,11 @@ class NotifPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text("Notif"),
+      child: Text(
+        "Tidak ada pesan yang diterima",
+        style: TextStyle(
+            color: Colors.brown, fontSize: 18, fontWeight: FontWeight.bold),
+      ),
     );
   }
 }

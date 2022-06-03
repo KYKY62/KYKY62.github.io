@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return SafeArea(
+      child: Scaffold(
         backgroundColor: Color(0xffEDE6DB),
         appBar: AppBar(
           elevation: 0,
@@ -19,6 +20,14 @@ class ShopPage extends StatelessWidget {
               fontSize: 18,
             ),
           ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Color(0xffFFF6EA),
+          child: Icon(
+            Icons.shopping_cart_outlined,
+            color: Color(0xffE8630A),
+          ),
+          onPressed: () {},
         ),
         body: ListView(
           children: [
@@ -36,7 +45,16 @@ class ShopPage extends StatelessWidget {
               gambar: "assets/c2.png",
               jumlah: 2,
             ),
+            CartWidget(
+              name: "Short Macchiato",
+              desc: "With Soy Milk",
+              price: "\$5.35",
+              gambar: "assets/short.png",
+              jumlah: 1,
+            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }

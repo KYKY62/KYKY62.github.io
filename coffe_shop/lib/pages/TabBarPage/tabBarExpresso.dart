@@ -21,19 +21,19 @@ class TabBarExpresso extends StatelessWidget {
                   CappucinoCategories(
                     name: "Short Macchiato",
                     desc: "With a little mixture of steamed milk",
-                    price: "\$4.98",
+                    price: "\$5.35",
                     gambar: "assets/short.png",
                   ),
                   CappucinoCategories(
                     name: "Long Macchiato",
                     desc: "With double shot espresso",
-                    price: "\$5.14",
+                    price: "\$5.34",
                     gambar: "assets/long.png",
                   ),
                   CappucinoCategories(
                     name: "Piccolo",
                     desc: "With caffe latte",
-                    price: "\$5.14",
+                    price: "\$6.14",
                     gambar: "assets/piccolo.png",
                   ),
                   SizedBox(width: 20),

@@ -1,9 +1,11 @@
 // ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:coffe_shop/provider/product_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:readmore/readmore.dart';
+import 'package:provider/provider.dart';
 
 class DescPage extends StatefulWidget {
   const DescPage({Key? key}) : super(key: key);
@@ -15,6 +17,8 @@ class DescPage extends StatefulWidget {
 class _DescPageState extends State<DescPage> {
   @override
   Widget build(BuildContext context) {
+    final product = Provider.of<Products>(context);
+
     Widget PictureDesc() {
       return Container(
         padding: EdgeInsets.all(10),
@@ -49,12 +53,22 @@ class _DescPageState extends State<DescPage> {
                           ),
                         ),
                         IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Icons.favorite_border,
-                            size: 20,
-                            color: Colors.black,
-                          ),
+                          onPressed: () {
+                            setState(() {
+                              product.btnFav();
+                            });
+                          },
+                          icon: (product.isFavorite)
+                              ? Icon(
+                                  Icons.favorite,
+                                  size: 20,
+                                  color: Colors.red,
+                                )
+                              : Icon(
+                                  Icons.favorite_border,
+                                  size: 20,
+                                  color: Colors.black,
+                                ),
                         )
                       ],
                     ),

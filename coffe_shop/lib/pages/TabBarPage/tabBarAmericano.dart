@@ -21,19 +21,19 @@ class TabBarAmericano extends StatelessWidget {
                   CappucinoCategories(
                     name: "Mocha",
                     desc: "With chocolate mixed with espresso and milk.",
-                    price: "\$4.98",
+                    price: "\$4.56",
                     gambar: "assets/mocha.png",
                   ),
                   CappucinoCategories(
                     name: "Cold brew",
                     desc: "Not too bitter and not too sour",
-                    price: "\$5.14",
+                    price: "\$5.80",
                     gambar: "assets/icebrew.png",
                   ),
                   CappucinoCategories(
                     name: "Cortado",
                     desc: "With Espresso milk and warm milk",
-                    price: "\$5.14",
+                    price: "\$3.67",
                     gambar: "assets/cortado.png",
                   ),
                   SizedBox(width: 20),
