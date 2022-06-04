@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, avoid_unnecessary_containers, prefer_const_constructors
+
 import 'package:coffe_shop/widget/cappucino_widget.dart';
 import 'package:coffe_shop/widget/special_offers_widget.dart';
 import 'package:flutter/material.dart';
