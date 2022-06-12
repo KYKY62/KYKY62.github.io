@@ -1,3 +1,4 @@
+import 'package:clone_gojek/widgets/custom_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:clone_gojek/common/my_colors.dart';
 import 'package:clone_gojek/common/my_font_size.dart';
@@ -25,6 +26,8 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   int tabBarIndex = 0;
+
+  int balanceLogic = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -161,6 +164,108 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
 
+    Widget CardBalance() {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+        child: Container(
+          height: 130,
+          decoration: BoxDecoration(
+            color: MyColors.blue,
+            borderRadius: BorderRadius.circular(30),
+          ),
+          child: Row(
+            children: [
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ...List.generate(
+                    2,
+                    ((index) => Container(
+                          margin: EdgeInsets.symmetric(
+                            horizontal: 7,
+                            vertical: 5,
+                          ),
+                          width: 4,
+                          height: 20,
+                          decoration: BoxDecoration(
+                            color: (balanceLogic == index)
+                                ? MyColors.white
+                                : MyColors.grey,
+                            borderRadius: BorderRadius.circular(100),
+                          ),
+                        )),
+                  )
+                ],
+              ),
+              Container(
+                padding: EdgeInsets.all(10),
+                margin: EdgeInsets.only(left: 10),
+                width: 150,
+                height: 110,
+                decoration: BoxDecoration(
+                  color: MyColors.white,
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          "IndoPay",
+                          style: TextStyle(
+                            color: MyColors.blackText,
+                            fontSize: MyFontSize.large1,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 8),
+                    Text(
+                      "Saldo masih kosong",
+                      style: TextStyle(
+                        color: MyColors.blackText,
+                        fontSize: MyFontSize.medium1,
+                      ),
+                    ),
+                    SizedBox(height: 5),
+                    Text(
+                      "Klik buat isi",
+                      style: TextStyle(
+                        color: MyColors.green,
+                        fontSize: MyFontSize.medium1,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Expanded(
+                child: CustomIcon(
+                  IconPath: "assets/ic_bayar.png",
+                  text: "Bayar",
+                ),
+              ),
+              Expanded(
+                child: CustomIcon(
+                  IconPath: "assets/ic_topup.png",
+                  text: "TopUp",
+                ),
+              ),
+              Expanded(
+                child: CustomIcon(
+                  IconPath: "assets/ic_eksplor.png",
+                  text: "Eksplor",
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: MyColors.white,
       appBar: AppBar(
@@ -170,6 +275,7 @@ class _HomeScreenState extends State<HomeScreen> {
       body: ListView(
         children: [
           searchBar(),
+          CardBalance(),
         ],
       ),
     );
