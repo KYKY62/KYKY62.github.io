@@ -61,7 +61,7 @@ class _MystopWatchState extends State<MystopWatch> {
                         : InkWell(
                             borderRadius: BorderRadius.circular(24),
                             onTap: null,
-                            child: WidgetBtn("Start", 0xff1A1F38),
+                            child: WidgetBtn("Restart", 0xff1A1F38),
                           ),
                     (timer.stopEnable)
                         ? InkWell(
