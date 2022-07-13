@@ -16,22 +16,22 @@ class _MysplashState extends State<Mysplash> {
     Timer(
       duration,
       (() => Navigator.pushNamedAndRemoveUntil(
-          context, '/stopwatch', (route) => false)),
+          context, '/main', (route) => false)),
     );
     super.initState();
   }
 
-  String logo = "assets/logo.png";
+  String logo = "assets/Logo_apps.png";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff898AA6),
+      backgroundColor: const Color.fromARGB(255, 17, 20, 38),
       body: Center(
         child: Image.asset(
           logo,
-          width: 250,
-          height: 390,
+          width: 500,
+          height: 500,
         ),
       ),
     );

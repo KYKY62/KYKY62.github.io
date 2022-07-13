@@ -1,32 +1,29 @@
-import 'package:clock_apps/provider/timer_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 class WidgetBtn extends StatelessWidget {
   final String text;
-  final int Warna;
+  final int warna;
 
-  WidgetBtn(
+  const WidgetBtn(
     this.text,
-    this.Warna,
+    this.warna,
   );
 
   @override
   Widget build(BuildContext context) {
-    final timerProvider = Provider.of<TimerProvider>(context, listen: false);
     return Container(
       width: 70,
       height: 40,
       decoration: BoxDecoration(
         border: Border.all(
-          color: Color(Warna),
+          color: Color(warna),
         ),
         borderRadius: BorderRadius.circular(24),
       ),
       child: Center(
         child: Text(
           text,
-          style: TextStyle(
+          style: const TextStyle(
             color: Color(0xffFFE500),
           ),
         ),

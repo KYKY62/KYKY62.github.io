@@ -14,13 +14,6 @@ class _MystopWatchState extends State<MystopWatch> {
   var timer;
 
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    timer = Provider.of<TimerProvider>(context, listen: false);
-  }
-
-  @override
   Widget build(BuildContext context) {
     timer = Provider.of<TimerProvider>(context, listen: false);
     return SafeArea(
@@ -32,10 +25,8 @@ class _MystopWatchState extends State<MystopWatch> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  '${timer.digithour} : ' +
-                      '${timer.digitminute} : ' +
-                      '${timer.digitsecond} ',
-                  style: TextStyle(
+                  '${timer.digithour} : ${timer.digitminute} : ${timer.digitsecond} ',
+                  style: const TextStyle(
                     fontSize: 42,
                     fontWeight: FontWeight.bold,
                     color: Color(0xffFFE500),
@@ -47,7 +38,7 @@ class _MystopWatchState extends State<MystopWatch> {
                     ],
                   ),
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -56,34 +47,34 @@ class _MystopWatchState extends State<MystopWatch> {
                         ? InkWell(
                             borderRadius: BorderRadius.circular(24),
                             onTap: timer.startTimer,
-                            child: WidgetBtn("Start", 0xffFFE500),
+                            child: const WidgetBtn("Start", 0xffFFE500),
                           )
                         : InkWell(
                             borderRadius: BorderRadius.circular(24),
-                            onTap: null,
-                            child: WidgetBtn("Restart", 0xff1A1F38),
+                            onTap: timer.resetTimer,
+                            child: const WidgetBtn("Restart", 0xff1A1F38),
                           ),
                     (timer.stopEnable)
                         ? InkWell(
                             borderRadius: BorderRadius.circular(24),
                             onTap: timer.stopTimer,
-                            child: WidgetBtn("Stop", 0xffFFE500),
+                            child: const WidgetBtn("Stop", 0xffFFE500),
                           )
                         : InkWell(
                             borderRadius: BorderRadius.circular(24),
                             onTap: null,
-                            child: WidgetBtn("Stop", 0xff1A1F38),
+                            child: const WidgetBtn("Stop", 0xff1A1F38),
                           ),
                     (timer.continueEnable)
                         ? InkWell(
                             borderRadius: BorderRadius.circular(24),
                             onTap: timer.continueTimer,
-                            child: WidgetBtn("Continue", 0xffFFE500),
+                            child: const WidgetBtn("Continue", 0xffFFE500),
                           )
                         : InkWell(
                             borderRadius: BorderRadius.circular(24),
                             onTap: null,
-                            child: WidgetBtn("Continue", 0xff1A1F38),
+                            child: const WidgetBtn("Continue", 0xff1A1F38),
                           ),
                   ],
                 ),

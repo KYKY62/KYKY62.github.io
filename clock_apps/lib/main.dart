@@ -1,6 +1,5 @@
 import 'package:clock_apps/pages/main_page.dart';
 import 'package:clock_apps/pages/splash_page.dart';
-import 'package:clock_apps/pages/stopwatch_page.dart';
 import 'package:clock_apps/provider/timer_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -21,8 +20,8 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         routes: {
-          '/': (context) => MainPage(),
-          '/stopwatch': (context) => MystopWatch()
+          '/': (context) => const Mysplash(),
+          '/main': (context) => const MainPage()
         },
       ),
     );

@@ -36,7 +36,7 @@ class TimerProvider with ChangeNotifier {
     _stopEnable = true;
     _continueEnable = false;
 
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       int localsecond = _seconds;
       int localminute = _minute;
       int localhour = _hour;
@@ -66,7 +66,7 @@ class TimerProvider with ChangeNotifier {
 
   void stopTimer() {
     if (_startEnable == false) {
-      _startEnable = true;
+      _startEnable = false;
       _continueEnable = true;
       _stopEnable = false;
       _timer!.cancel();
@@ -79,7 +79,7 @@ class TimerProvider with ChangeNotifier {
     _stopEnable = true;
     _continueEnable = false;
 
-    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       int localsecond = _seconds;
       int localminute = _minute;
       int localhour = _hour;
@@ -106,7 +106,12 @@ class TimerProvider with ChangeNotifier {
     });
   }
 
-  void reset() {
+  void resetTimer() {
+    _startEnable = true;
+    _stopEnable = false;
+    _continueEnable = false;
+    _timer!.cancel();
+
     _hour = 0;
     _minute = 0;
     _seconds = 0;
@@ -114,6 +119,7 @@ class TimerProvider with ChangeNotifier {
     _digitsecond = "00";
     _digitminute = "00";
     _digithour = "00";
+
     notifyListeners();
   }
 }
