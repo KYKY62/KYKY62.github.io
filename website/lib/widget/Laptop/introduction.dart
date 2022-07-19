@@ -67,36 +67,36 @@ class IntroductionWidget extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(height: 75),
-                    Text(
+                    const SizedBox(height: 75),
+                    const Text(
                       "Rizky Akbar Siregar",
                       style: TextStyle(
                           color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
-                    SizedBox(height: 25),
-                    Text(
+                    const SizedBox(height: 25),
+                    const Text(
                       "Flutter",
                       style: TextStyle(
                         fontSize: 45,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "Developer Based",
                       style: TextStyle(
                         fontSize: 45,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    Text(
+                    const Text(
                       "in Indonesia",
                       style: TextStyle(
                         fontSize: 45,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    SizedBox(height: 25),
-                    Text(
+                    const SizedBox(height: 25),
+                    const Text(
                       "I'm a flutter mobile app development.I'm a hard worker and on time according to the time specified by the client, of course prioritizing results and client satisfaction",
                       textAlign: TextAlign.justify,
                       style: TextStyle(
@@ -104,7 +104,7 @@ class IntroductionWidget extends StatelessWidget {
                         height: 1.8,
                       ),
                     ),
-                    SizedBox(height: 60),
+                    const SizedBox(height: 60),
                     Container(
                       width: 150,
                       height: 50,
@@ -112,7 +112,7 @@ class IntroductionWidget extends StatelessWidget {
                         color: Colors.blue,
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: Center(
+                      child: const Center(
                         child: Text(
                           "My Contact",
                           style: TextStyle(
@@ -138,7 +138,7 @@ class IntroductionWidget extends StatelessWidget {
             ],
           ),
           Container(
-            margin: EdgeInsets.only(left: 250, bottom: 150),
+            margin: const EdgeInsets.only(left: 250, bottom: 150),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -258,7 +258,7 @@ class IntroductionWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(width: 55)
+                const SizedBox(width: 55)
               ],
             ),
           )
