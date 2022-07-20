@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:website/widget/Laptop/clientwork.dart';
 import 'package:website/widget/Laptop/introduction.dart';
+import 'package:website/widget/Laptop/myabout.dart';
 import 'package:website/widget/Laptop/myportofolio.dart';
 
 class LandingPage extends StatelessWidget {
@@ -11,9 +12,10 @@ class LandingPage extends StatelessWidget {
     return Scaffold(
         body: ListView(
       children: [
-        const IntroductionWidget(),
+        IntroductionWidget(),
         const MyPortofolio(),
-        const ClientWork()
+        const ClientWork(),
+        const MyAbout(),
       ],
     ));
   }
