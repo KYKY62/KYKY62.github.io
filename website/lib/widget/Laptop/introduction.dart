@@ -1,10 +1,8 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:website/widget/Laptop/myportofolio.dart';
 
 class IntroductionWidget extends StatelessWidget {
+  const IntroductionWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final mediaQ = MediaQuery.of(context).size;
@@ -107,19 +105,23 @@ class IntroductionWidget extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 60),
-                    Container(
-                      width: 150,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
+                    Material(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(30),
+                      child: InkWell(
+                        onTap: () {},
                         borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: const Center(
-                        child: Text(
-                          "My Contact",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w300,
+                        child: const SizedBox(
+                          width: 150,
+                          height: 50,
+                          child: Center(
+                            child: Text(
+                              "My Contact",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
                           ),
                         ),
                       ),
