@@ -52,7 +52,7 @@ class MyPortofolio extends StatelessWidget {
                   height: 600,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(48),
-                    color: const Color(0xffABC9FF),
+                    color: const Color(0xffBACDFC),
                   ),
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(
@@ -85,7 +85,7 @@ class MyPortofolio extends StatelessWidget {
                   height: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(48),
-                    color: const Color(0xffABC9FF),
+                    color: const Color(0xffBACDFC),
                   ),
                   child: ClipRRect(
                     borderRadius: const BorderRadius.all(
@@ -106,7 +106,7 @@ class MyPortofolio extends StatelessWidget {
                 height: 300,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(48),
-                  color: const Color(0xffABC9FF),
+                  color: const Color(0xffBACDFC),
                 ),
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(

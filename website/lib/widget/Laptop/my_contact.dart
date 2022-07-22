@@ -1,16 +1,27 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MyContact extends StatelessWidget {
   const MyContact({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Uri emailLaunch = Uri(
+      scheme: 'mailto',
+      path: 'rizkysrg62@gmail.com',
+    );
+
+    final UrlWhatsapp = Uri.parse(
+      "https://wa.me/62895326494486/?text=Saya%20tertarik%20untuk%20bekerjasama%20dengan%20anda",
+    );
+
     return Container(
-      margin: const EdgeInsets.only(top: 50, bottom: 200),
+      margin: const EdgeInsets.only(
+        top: 50,
+      ),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             textAlign: TextAlign.center,
@@ -39,7 +50,9 @@ class MyContact extends StatelessWidget {
             borderRadius: BorderRadius.circular(80),
             child: InkWell(
               borderRadius: BorderRadius.circular(80),
-              onTap: () {},
+              onTap: () {
+                launchUrl(emailLaunch);
+              },
               child: const SizedBox(
                 width: 300,
                 height: 70,
@@ -54,6 +67,56 @@ class MyContact extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.only(
+              right: 150,
+              left: 150,
+              top: 120,
+              bottom: 40,
+            ),
+            child: Row(
+              children: [
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(32),
+                  child: Image.asset(
+                    "assets/Logo.png",
+                    fit: BoxFit.cover,
+                    width: 50,
+                  ),
+                ),
+                Spacer(),
+                Text(
+                  "Home",
+                  style: TextStyle(
+                    fontSize: 18,
+                  ),
+                ),
+                SizedBox(width: 40),
+                Text("Work",
+                    style: TextStyle(
+                      fontSize: 18,
+                    )),
+                SizedBox(width: 40),
+                Text("About",
+                    style: TextStyle(
+                      fontSize: 18,
+                    )),
+                SizedBox(width: 40),
+                GestureDetector(
+                  onTap: () {
+                    launchUrl(
+                      UrlWhatsapp,
+                      mode: LaunchMode.externalNonBrowserApplication,
+                    );
+                  },
+                  child: Text("Contact",
+                      style: TextStyle(
+                        fontSize: 18,
+                      )),
+                ),
+              ],
             ),
           )
         ],

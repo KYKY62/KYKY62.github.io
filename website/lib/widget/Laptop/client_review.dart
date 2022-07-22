@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class ClientReview extends StatelessWidget {
   const ClientReview({Key? key}) : super(key: key);
@@ -22,7 +22,7 @@ class ClientReview extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Icon(
-                Iconsax.quote_up5,
+                MdiIcons.formatQuoteOpen,
                 color: Colors.white,
                 size: 50,
               ),
