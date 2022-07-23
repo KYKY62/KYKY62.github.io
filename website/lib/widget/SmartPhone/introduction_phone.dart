@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class IntroductionPhone extends StatelessWidget {
   const IntroductionPhone({Key? key}) : super(key: key);
@@ -6,9 +7,12 @@ class IntroductionPhone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQ = MediaQuery.of(context).size;
+    final urlWhatsapp = Uri.parse(
+      "https://wa.me/62895326494486/?text=Saya%20tertarik%20untuk%20bekerjasama%20dengan%20anda",
+    );
     return Container(
-      decoration: BoxDecoration(
-        color: const Color(0xFFFFFFFF),
+      decoration: const BoxDecoration(
+        color: Color(0xFFFFFFFF),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,35 +34,35 @@ class IntroductionPhone extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Rizky Akbar Siregar",
                   style: TextStyle(
                       color: Colors.blue, fontWeight: FontWeight.bold),
                 ),
-                SizedBox(height: 25),
-                Text(
+                const SizedBox(height: 25),
+                const Text(
                   "Flutter",
                   style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   "Developer Based",
                   style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
+                const Text(
                   "in Indonesia",
                   style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 25),
-                Text(
+                const SizedBox(height: 25),
+                const Text(
                   "I'm a flutter mobile app development.I'm a hard worker and on time according to the time specified by the client, of course prioritizing results and client satisfaction",
                   textAlign: TextAlign.justify,
                   style: TextStyle(
@@ -71,7 +75,12 @@ class IntroductionPhone extends StatelessWidget {
                   color: Colors.blue,
                   borderRadius: BorderRadius.circular(30),
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      launchUrl(
+                        urlWhatsapp,
+                        mode: LaunchMode.externalNonBrowserApplication,
+                      );
+                    },
                     borderRadius: BorderRadius.circular(30),
                     child: const SizedBox(
                       width: 150,
@@ -91,7 +100,7 @@ class IntroductionPhone extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 20),
+          const SizedBox(height: 20),
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(
@@ -159,7 +168,7 @@ class IntroductionPhone extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -228,7 +237,7 @@ class IntroductionPhone extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
               ],
             ),
           )

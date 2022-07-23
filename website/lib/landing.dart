@@ -8,7 +8,13 @@ import 'package:website/widget/Laptop/introduction.dart';
 import 'package:website/widget/Laptop/my_contact.dart';
 import 'package:website/widget/Laptop/myabout.dart';
 import 'package:website/widget/Laptop/myportofolio.dart';
+import 'package:website/widget/SmartPhone/bottomheader_phone.dart';
+import 'package:website/widget/SmartPhone/clientreview_phone.dart';
+import 'package:website/widget/SmartPhone/clientwork_phone.dart';
 import 'package:website/widget/SmartPhone/introduction_phone.dart';
+import 'package:website/widget/SmartPhone/myabout_phone.dart';
+import 'package:website/widget/SmartPhone/mycontact_phone.dart';
+import 'package:website/widget/SmartPhone/myportofolio.phone.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -16,13 +22,18 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      if (constraints.maxWidth <= 600) {
+      if (constraints.maxWidth <= 600 && constraints.minWidth >= 320) {
         return SafeArea(
           child: Scaffold(
             body: ListView(
               children: [
-                // Text(MediaQuery.of(context).size.width.toInt().toString()),
-                IntroductionPhone(),
+                const IntroductionPhone(),
+                const MyPortofolioPhone(),
+                const ClientWorkPhone(),
+                const MyAboutPhone(),
+                const ClientReviewPhone(),
+                const MyContactPhone(),
+                const BottomHeaderPhone(),
               ],
             ),
           ),

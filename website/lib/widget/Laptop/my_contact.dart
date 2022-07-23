@@ -13,7 +13,7 @@ class MyContact extends StatelessWidget {
       path: 'rizkysrg62@gmail.com',
     );
 
-    final UrlWhatsapp = Uri.parse(
+    final urlWhatsapp = Uri.parse(
       "https://wa.me/62895326494486/?text=Saya%20tertarik%20untuk%20bekerjasama%20dengan%20anda",
     );
 
@@ -41,7 +41,7 @@ class MyContact extends StatelessWidget {
               height: 2,
               fontSize: 18,
               wordSpacing: 2,
-              fontWeight: FontWeight.w200,
+              fontWeight: FontWeight.w300,
             ),
           ),
           const SizedBox(height: 40),
@@ -107,7 +107,7 @@ class MyContact extends StatelessWidget {
                 GestureDetector(
                   onTap: () {
                     launchUrl(
-                      UrlWhatsapp,
+                      urlWhatsapp,
                       mode: LaunchMode.externalNonBrowserApplication,
                     );
                   },

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class IntroductionWidget extends StatelessWidget {
   const IntroductionWidget({Key? key}) : super(key: key);
@@ -6,6 +7,10 @@ class IntroductionWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQ = MediaQuery.of(context).size;
+
+    final urlWhatsapp = Uri.parse(
+      "https://wa.me/62895326494486/?text=Saya%20tertarik%20untuk%20bekerjasama%20dengan%20anda",
+    );
     return Container(
       color: const Color(0xFFFFFFFF),
       child: Column(
@@ -109,7 +114,12 @@ class IntroductionWidget extends StatelessWidget {
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(30),
                       child: InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          launchUrl(
+                            urlWhatsapp,
+                            mode: LaunchMode.externalNonBrowserApplication,
+                          );
+                        },
                         borderRadius: BorderRadius.circular(30),
                         child: const SizedBox(
                           width: 150,
