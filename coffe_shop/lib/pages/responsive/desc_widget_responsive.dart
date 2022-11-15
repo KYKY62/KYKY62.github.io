@@ -1,22 +1,19 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
-import 'package:coffe_shop/provider/product_provider.dart';
+import 'package:coffe_shop/controller/product_controller.dart';
 import 'package:flutter/material.dart';
 
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
-class DescWidgetResponsive extends StatefulWidget {
-  @override
-  State<DescWidgetResponsive> createState() => _DescWidgetState();
-}
+class DescWidgetResponsive extends StatelessWidget {
+  DescWidgetResponsive({Key? key}) : super(key: key);
 
-class _DescWidgetState extends State<DescWidgetResponsive> {
+  final productC = Get.find<Products>();
+
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Products>(context);
-
     return Container(
       padding: EdgeInsets.all(10),
       margin: EdgeInsets.only(bottom: 30),
@@ -42,7 +39,7 @@ class _DescWidgetState extends State<DescWidgetResponsive> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          Navigator.pop(context);
+                          Get.back();
                         },
                         icon: Icon(
                           Icons.arrow_back,
@@ -50,23 +47,21 @@ class _DescWidgetState extends State<DescWidgetResponsive> {
                           color: Colors.black,
                         ),
                       ),
-                      IconButton(
-                        onPressed: () {
-                          setState(() {
-                            product.btnFav();
-                          });
-                        },
-                        icon: (product.isFavorite)
-                            ? Icon(
-                                Icons.favorite,
-                                size: 20,
-                                color: Colors.red,
-                              )
-                            : Icon(
-                                Icons.favorite_border,
-                                size: 20,
-                                color: Colors.black,
-                              ),
+                      Obx(
+                        () => IconButton(
+                          onPressed: () => productC.btnFav(),
+                          icon: (productC.isFavorite.value)
+                              ? Icon(
+                                  Icons.favorite,
+                                  size: 20,
+                                  color: Colors.red,
+                                )
+                              : Icon(
+                                  Icons.favorite_border,
+                                  size: 20,
+                                  color: Colors.black,
+                                ),
+                        ),
                       )
                     ],
                   ),
@@ -161,7 +156,7 @@ class _DescWidgetState extends State<DescWidgetResponsive> {
                             ),
                           ),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () => productC.decrement(),
                             icon: Icon(
                               Icons.remove,
                               size: 14,
@@ -169,10 +164,10 @@ class _DescWidgetState extends State<DescWidgetResponsive> {
                           ),
                         ),
                       ),
-                      Text(
-                        "1",
-                        style: TextStyle(fontSize: 20),
-                      ),
+                      Obx(() => Text(
+                            "${productC.count}",
+                            style: TextStyle(fontSize: 20),
+                          )),
                       Padding(
                         padding: const EdgeInsets.all(3),
                         child: Container(
@@ -185,7 +180,7 @@ class _DescWidgetState extends State<DescWidgetResponsive> {
                             ),
                           ),
                           child: IconButton(
-                            onPressed: () {},
+                            onPressed: () => productC.increment(),
                             icon: Icon(
                               Icons.add,
                               size: 14,

@@ -1,11 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:coffe_shop/pages/desc_page.dart';
-import 'package:coffe_shop/pages/main_page.dart';
-import 'package:coffe_shop/provider/product_provider.dart';
+import 'package:coffe_shop/routes/page_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
+import 'package:get/get.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,15 +18,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => Products(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        routes: {
-          '/': (context) => MainPage(),
-          '/desc': (context) => DescPage(),
-        },
-      ),
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      getPages: AppPage.pageName,
     );
   }
 }
