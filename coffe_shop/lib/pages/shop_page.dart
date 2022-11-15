@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
-
 import 'package:coffe_shop/controller/product_controller.dart';
 import 'package:coffe_shop/widget/cart_widget.dart';
 import 'package:flutter/material.dart';
@@ -9,16 +7,18 @@ class ShopPage extends StatelessWidget {
   final cartbyid1 = Get.put(Products(), tag: "cartbyid1");
   final cartbyid2 = Get.put(Products(), tag: "cartbyid2");
   final cartbyid3 = Get.put(Products(), tag: "cartbyid3");
+
+  ShopPage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          backgroundColor: Color(0xffEDE6DB),
+          backgroundColor: const Color(0xffEDE6DB),
           appBar: AppBar(
             elevation: 0,
-            backgroundColor: Color(0xffEDE6DB),
+            backgroundColor: const Color(0xffEDE6DB),
             centerTitle: true,
-            title: Text(
+            title: const Text(
               "Checkout",
               style: TextStyle(
                 color: Colors.black,
@@ -27,8 +27,8 @@ class ShopPage extends StatelessWidget {
             ),
           ),
           floatingActionButton: FloatingActionButton(
-            backgroundColor: Color(0xffFFF6EA),
-            child: Icon(
+            backgroundColor: const Color(0xffFFF6EA),
+            child: const Icon(
               Icons.shopping_cart_outlined,
               color: Color(0xffE8630A),
             ),

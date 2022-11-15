@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
-
 import 'package:coffe_shop/pages/responsive/desktop_desc.dart';
 import 'package:coffe_shop/widget/desc_widget.dart';
 import 'package:flutter/material.dart';
@@ -7,23 +5,25 @@ import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
 
 class DescPage extends StatelessWidget {
+  const DescPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    Widget SizeCup() {
+    Widget sizeCup() {
       return Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(bottom: 30),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(bottom: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Choose Your Drink Size",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,9 +33,9 @@ class DescPage extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffE8630A),
+                    color: const Color(0xffE8630A),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "S",
                       style: TextStyle(
@@ -50,9 +50,9 @@ class DescPage extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffE8630A),
+                    color: const Color(0xffE8630A),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "M",
                       style: TextStyle(
@@ -67,9 +67,9 @@ class DescPage extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffE8630A),
+                    color: const Color(0xffE8630A),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "L",
                       style: TextStyle(
@@ -86,13 +86,13 @@ class DescPage extends StatelessWidget {
       );
     }
 
-    Widget Description() {
+    Widget description() {
       return Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(bottom: 50),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(bottom: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Text(
               "Description",
               style: TextStyle(
@@ -118,7 +118,7 @@ class DescPage extends StatelessWidget {
       );
     }
 
-    Widget BtnPrice() {
+    Widget btnPrice() {
       return Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
@@ -127,7 +127,7 @@ class DescPage extends StatelessWidget {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   "Price",
                   style: TextStyle(
@@ -148,10 +148,10 @@ class DescPage extends StatelessWidget {
               width: 200,
               height: 40,
               decoration: BoxDecoration(
-                color: Color(0xffE8630A),
+                color: const Color(0xffE8630A),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Add to cart",
                   style: TextStyle(
@@ -168,11 +168,11 @@ class DescPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xffFFF6EA),
+      backgroundColor: const Color(0xffFFF6EA),
       body: LayoutBuilder(
         builder: (context, constraints) {
           if (constraints.maxWidth >= 600) {
-            return DesktopDesk();
+            return const DesktopDesk();
           } else {
             return SafeArea(
               child: ListView(
@@ -181,9 +181,9 @@ class DescPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       DescWidget(),
-                      SizeCup(),
-                      Description(),
-                      BtnPrice(),
+                      sizeCup(),
+                      description(),
+                      btnPrice(),
                     ],
                   ),
                 ],

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -11,8 +9,8 @@ class ProfilePage extends StatelessWidget {
 
     Widget picProfile() {
       return Container(
-        margin: EdgeInsets.only(top: 20, bottom: 20),
-        decoration: BoxDecoration(
+        margin: const EdgeInsets.only(top: 20, bottom: 20),
+        decoration: const BoxDecoration(
           color: Color(0xffEDE6DB),
           shape: BoxShape.circle,
         ),
@@ -26,7 +24,7 @@ class ProfilePage extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {},
-              child: Text(
+              child: const Text(
                 "Change profile picture",
                 style: TextStyle(
                   color: Colors.brown,
@@ -44,19 +42,20 @@ class ProfilePage extends StatelessWidget {
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
+          margin: const EdgeInsets.symmetric(vertical: 10),
           width: responsive.width,
           height: 70,
           decoration: BoxDecoration(
-            color: Color(0xffFFF6EA),
+            color: const Color(0xffFFF6EA),
             borderRadius: BorderRadius.circular(20),
           ),
           child: TextFormField(
-            style: TextStyle(color: Colors.brown, fontWeight: FontWeight.bold),
+            style: const TextStyle(
+                color: Colors.brown, fontWeight: FontWeight.bold),
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.all(20),
+              contentPadding: const EdgeInsets.all(20),
               labelText: label,
-              labelStyle: TextStyle(
+              labelStyle: const TextStyle(
                 color: Colors.brown,
                 fontWeight: FontWeight.w300,
               ),
@@ -69,12 +68,12 @@ class ProfilePage extends StatelessWidget {
 
     return SafeArea(
       child: Scaffold(
-        backgroundColor: Color(0xffEDE6DB),
+        backgroundColor: const Color(0xffEDE6DB),
         appBar: AppBar(
           elevation: 0,
-          backgroundColor: Color(0xffEDE6DB),
+          backgroundColor: const Color(0xffEDE6DB),
           centerTitle: true,
-          title: Text(
+          title: const Text(
             "Profile",
             style: TextStyle(
               color: Colors.black,
@@ -84,7 +83,7 @@ class ProfilePage extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {},
-              child: Text("Simpan"),
+              child: const Text("Simpan"),
             ),
           ],
         ),

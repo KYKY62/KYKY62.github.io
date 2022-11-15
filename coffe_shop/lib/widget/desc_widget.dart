@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
-
 import 'package:coffe_shop/controller/product_controller.dart';
 import 'package:flutter/material.dart';
 
@@ -14,8 +12,8 @@ class DescWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(10),
-      margin: EdgeInsets.only(bottom: 30),
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: 30),
       child: Column(
         children: [
           Stack(
@@ -31,7 +29,7 @@ class DescWidget extends StatelessWidget {
                 // top: 0,
                 // left: 10,
                 child: Container(
-                  margin: EdgeInsets.symmetric(horizontal: 10),
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -39,7 +37,7 @@ class DescWidget extends StatelessWidget {
                         onPressed: () {
                           Get.back();
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.arrow_back,
                           size: 20,
                           color: Colors.black,
@@ -49,12 +47,12 @@ class DescWidget extends StatelessWidget {
                         () => IconButton(
                           onPressed: () => productC.btnFav(),
                           icon: productC.isFavorite.value
-                              ? Icon(
+                              ? const Icon(
                                   Icons.favorite,
                                   size: 20,
                                   color: Colors.red,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.favorite_border,
                                   size: 20,
                                   color: Colors.black,
@@ -78,7 +76,7 @@ class DescWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
+                        const Text(
                           "Cappucino",
                           style: TextStyle(
                             color: Colors.black,
@@ -86,15 +84,15 @@ class DescWidget extends StatelessWidget {
                             fontSize: 16,
                           ),
                         ),
-                        SizedBox(height: 5),
-                        Text(
+                        const SizedBox(height: 5),
+                        const Text(
                           "With Sprinkle Cinnamon Powder",
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 12,
                           ),
                         ),
-                        SizedBox(height: 5),
+                        const SizedBox(height: 5),
                         Row(
                           children: [
                             RatingBar.builder(
@@ -105,7 +103,7 @@ class DescWidget extends StatelessWidget {
                               allowHalfRating: false,
                               itemCount: 5,
                               itemBuilder: (context, _) {
-                                return Icon(
+                                return const Icon(
                                   Icons.star,
                                   color: Colors.amber,
                                 );
@@ -113,14 +111,14 @@ class DescWidget extends StatelessWidget {
                               unratedColor: Colors.black54,
                               onRatingUpdate: (rating) {},
                             ),
-                            SizedBox(width: 10),
-                            Icon(
+                            const SizedBox(width: 10),
+                            const Icon(
                               Icons.person_sharp,
                               size: 12,
                               color: Colors.black,
                             ),
-                            SizedBox(width: 4),
-                            Text(
+                            const SizedBox(width: 4),
+                            const Text(
                               "304",
                               style:
                                   TextStyle(fontSize: 12, color: Colors.black),
@@ -140,7 +138,7 @@ class DescWidget extends StatelessWidget {
                   height: 100,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffE8630A),
+                    color: const Color(0xffE8630A),
                   ),
                   child: Column(
                     children: [
@@ -149,7 +147,7 @@ class DescWidget extends StatelessWidget {
                         child: Container(
                           width: 30,
                           height: 30,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),
@@ -157,7 +155,7 @@ class DescWidget extends StatelessWidget {
                           ),
                           child: IconButton(
                             onPressed: () => productC.decrement(),
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.remove,
                               size: 14,
                             ),
@@ -166,14 +164,14 @@ class DescWidget extends StatelessWidget {
                       ),
                       Obx(() => Text(
                             "${productC.count}",
-                            style: TextStyle(fontSize: 20),
+                            style: const TextStyle(fontSize: 20),
                           )),
                       Padding(
                         padding: const EdgeInsets.all(3),
                         child: Container(
                           width: 30,
                           height: 30,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),
@@ -181,7 +179,7 @@ class DescWidget extends StatelessWidget {
                           ),
                           child: IconButton(
                             onPressed: () => productC.increment(),
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.add,
                               size: 14,
                             ),

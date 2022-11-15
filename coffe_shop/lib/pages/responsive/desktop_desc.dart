@@ -1,28 +1,28 @@
-// ignore_for_file: non_constant_identifier_names, prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
-
 import 'package:coffe_shop/pages/responsive/desc_widget_responsive.dart';
 import 'package:flutter/material.dart';
 
 import 'package:readmore/readmore.dart';
 
 class DesktopDesk extends StatelessWidget {
+  const DesktopDesk({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    Widget SizeCup() {
+    Widget sizeCup() {
       return Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(bottom: 30),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(bottom: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Choose Your Drink Size",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -31,9 +31,9 @@ class DesktopDesk extends StatelessWidget {
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffE8630A),
+                    color: const Color(0xffE8630A),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "S",
                       style: TextStyle(
@@ -43,15 +43,15 @@ class DesktopDesk extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Container(
                   width: 90,
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffE8630A),
+                    color: const Color(0xffE8630A),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "M",
                       style: TextStyle(
@@ -61,15 +61,15 @@ class DesktopDesk extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 20),
+                const SizedBox(width: 20),
                 Container(
                   width: 90,
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Color(0xffE8630A),
+                    color: const Color(0xffE8630A),
                   ),
-                  child: Center(
+                  child: const Center(
                     child: Text(
                       "L",
                       style: TextStyle(
@@ -86,13 +86,13 @@ class DesktopDesk extends StatelessWidget {
       );
     }
 
-    Widget Description() {
+    Widget description() {
       return Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(bottom: 50),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(bottom: 50),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Text(
               "Description",
               style: TextStyle(
@@ -119,7 +119,7 @@ class DesktopDesk extends StatelessWidget {
       );
     }
 
-    Widget BtnPrice() {
+    Widget btnPrice() {
       return Padding(
         padding: const EdgeInsets.all(10),
         child: Row(
@@ -128,7 +128,7 @@ class DesktopDesk extends StatelessWidget {
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children: const [
                 Text(
                   "Price",
                   style: TextStyle(
@@ -150,10 +150,10 @@ class DesktopDesk extends StatelessWidget {
               width: 200,
               height: 40,
               decoration: BoxDecoration(
-                color: Color(0xffE8630A),
+                color: const Color(0xffE8630A),
                 borderRadius: BorderRadius.circular(20),
               ),
-              child: Center(
+              child: const Center(
                 child: Text(
                   "Add to cart",
                   style: TextStyle(
@@ -170,7 +170,7 @@ class DesktopDesk extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: Color(0xffFFF6EA),
+      backgroundColor: const Color(0xffFFF6EA),
       body: SafeArea(
           child: ListView(
         children: [
@@ -178,9 +178,9 @@ class DesktopDesk extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DescWidgetResponsive(),
-              SizeCup(),
-              Description(),
-              BtnPrice(),
+              sizeCup(),
+              description(),
+              btnPrice(),
             ],
           ),
         ],

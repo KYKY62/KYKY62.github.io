@@ -1,8 +1,6 @@
-// ignore_for_file: prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_constructors
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'package:coffe_shop/controller/product_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 class CartWidget extends StatelessWidget {
   final String name;
@@ -13,7 +11,8 @@ class CartWidget extends StatelessWidget {
   final String nama;
   final VoidCallback onIncrement;
 
-  CartWidget({
+  const CartWidget({
+    Key? key,
     required this.name,
     required this.desc,
     required this.price,
@@ -21,7 +20,7 @@ class CartWidget extends StatelessWidget {
     required this.onDecrement,
     required this.nama,
     required this.onIncrement,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,11 +28,11 @@ class CartWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
-        margin: EdgeInsets.only(bottom: 20),
+        margin: const EdgeInsets.only(bottom: 20),
         width: responsiveWidth,
         height: 150,
         decoration: BoxDecoration(
-          color: Color(0xffFFF6EA),
+          color: const Color(0xffFFF6EA),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
@@ -52,22 +51,22 @@ class CartWidget extends StatelessWidget {
                     children: [
                       Text(
                         name,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.brown,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
                       Text(
                         desc,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.brown,
                             fontSize: 12,
                             fontWeight: FontWeight.w300),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Text(
                         price,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       )
                     ],
@@ -78,18 +77,18 @@ class CartWidget extends StatelessWidget {
                 children: [
                   IconButton(
                     onPressed: onDecrement,
-                    icon: Icon(Icons.remove),
+                    icon: const Icon(Icons.remove),
                   ),
                   Text(
                     nama,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   IconButton(
                     onPressed: onIncrement,
-                    icon: Icon(Icons.add),
+                    icon: const Icon(Icons.add),
                   ),
                 ],
               ),

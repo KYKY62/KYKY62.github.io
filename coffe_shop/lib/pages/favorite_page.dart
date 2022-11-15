@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:coffe_shop/widget/favorite_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -9,12 +7,12 @@ class FavoritePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffEDE6DB),
+      backgroundColor: const Color(0xffEDE6DB),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Color(0xffEDE6DB),
+        backgroundColor: const Color(0xffEDE6DB),
         centerTitle: true,
-        title: Text(
+        title: const Text(
           "Your Favorite Coffe",
           style: TextStyle(
             color: Colors.black,
@@ -23,7 +21,7 @@ class FavoritePage extends StatelessWidget {
         ),
       ),
       body: ListView(
-        children: [
+        children: const [
           FavoriteWidget(
             nama: "Short Macchiato",
             harga: "\$5.35",

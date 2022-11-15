@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 class FavoriteWidget extends StatelessWidget {
@@ -7,24 +5,25 @@ class FavoriteWidget extends StatelessWidget {
   final String harga;
   final String gambar;
 
-  FavoriteWidget({
+  const FavoriteWidget({
+    Key? key,
     required this.nama,
     required this.harga,
     required this.gambar,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final responsiveWidth = MediaQuery.of(context).size.width;
 
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
-        margin: EdgeInsets.only(bottom: 20),
+        margin: const EdgeInsets.only(bottom: 20),
         width: responsiveWidth,
         height: 84,
         decoration: BoxDecoration(
-          color: Color(0xffFFF6EA),
+          color: const Color(0xffFFF6EA),
           borderRadius: BorderRadius.circular(20),
         ),
         child: Padding(
@@ -37,21 +36,21 @@ class FavoriteWidget extends StatelessWidget {
               ),
               Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 13),
+                  padding: const EdgeInsets.only(top: 13),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         nama,
-                        style: TextStyle(
+                        style: const TextStyle(
                             color: Colors.brown,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 15),
+                      const SizedBox(height: 15),
                       Text(
                         harga,
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.brown,
                           fontWeight: FontWeight.w300,
                         ),
@@ -61,13 +60,13 @@ class FavoriteWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color(0xffFFF6EA),
                   shape: BoxShape.circle,
                 ),
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.favorite,
                     size: 20,
                     color: Colors.red,

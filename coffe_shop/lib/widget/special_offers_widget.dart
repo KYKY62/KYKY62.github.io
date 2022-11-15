@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:coffe_shop/pages/responsive/desktop_special.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class SpecialOffersWidget extends StatelessWidget {
   final gambar;
 
-  SpecialOffersWidget({this.gambar});
+  const SpecialOffersWidget({Key? key, this.gambar}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class SpecialOffersWidget extends StatelessWidget {
               width: double.infinity,
               height: MediaQuery.of(context).size.width * 0.3,
               decoration: BoxDecoration(
-                color: Color(0xffFFF6EA),
+                color: const Color(0xffFFF6EA),
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -44,9 +44,9 @@ class SpecialOffersWidget extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(width: 14),
+                  const SizedBox(width: 14),
                   Container(
-                    padding: EdgeInsets.only(top: 8),
+                    padding: const EdgeInsets.only(top: 8),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -55,9 +55,9 @@ class SpecialOffersWidget extends StatelessWidget {
                           height: 25,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Color(0xffE8630A),
+                            color: const Color(0xffE8630A),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Discount Sale",
                               style: TextStyle(
@@ -66,15 +66,15 @@ class SpecialOffersWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(height: 10),
-                        Text(
+                        const SizedBox(height: 10),
+                        const Text(
                           "Buy to Caffe Latte Get",
                           style: TextStyle(
                               color: Colors.brown,
                               fontWeight: FontWeight.bold,
                               fontSize: 12),
                         ),
-                        Text(
+                        const Text(
                           "One Coffe Machito Free",
                           style: TextStyle(
                               color: Colors.brown,

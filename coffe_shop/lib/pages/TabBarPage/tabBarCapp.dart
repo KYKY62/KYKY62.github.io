@@ -19,7 +19,7 @@ class TabBarCapp extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   CappucinoCategories(
                     name: "Cappucino",
                     desc: "With Almond Milk",

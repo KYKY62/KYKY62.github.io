@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 class NotifPage extends StatelessWidget {
@@ -7,7 +5,7 @@ class NotifPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         "Tidak ada pesan yang diterima",
         style: TextStyle(

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
-
 import 'package:coffe_shop/pages/TabBarPage/tabBarAmericano.dart';
 import 'package:coffe_shop/pages/TabBarPage/tabBarCapp.dart';
 import 'package:coffe_shop/pages/TabBarPage/tabBarExpresso.dart';
@@ -19,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth >= 600) {
-          return DesktopBody();
+          return const DesktopBody();
         } else {
           return SafeArea(
             child: DefaultTabController(
@@ -31,7 +29,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.only(top: 15, left: 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text(
                           "Search Your",
                           style: TextStyle(
@@ -52,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 40),
+                  const SizedBox(height: 40),
                   //todo Search Bar
                   Padding(
                     padding: const EdgeInsets.only(right: 20, left: 20),
@@ -70,7 +68,7 @@ class _HomePageState extends State<HomePage> {
                           child: Padding(
                             padding: const EdgeInsets.all(10),
                             child: TextFormField(
-                              decoration: InputDecoration(
+                              decoration: const InputDecoration(
                                 icon: Icon(Icons.search),
                                 hintText: "Find Your Coffe",
                                 hintStyle: TextStyle(
@@ -87,11 +85,11 @@ class _HomePageState extends State<HomePage> {
                           height: 40,
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(12),
-                            color: Color(0xffE8630A),
+                            color: const Color(0xffE8630A),
                           ),
                           child: IconButton(
                             onPressed: () {},
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.sort,
                               color: Colors.white,
                             ),
@@ -100,9 +98,9 @@ class _HomePageState extends State<HomePage> {
                       ],
                     ),
                   ),
-                  SizedBox(height: 30),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20, bottom: 20),
+                  const SizedBox(height: 30),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20, bottom: 20),
                     child: Text(
                       "Categories",
                       style: TextStyle(
@@ -122,10 +120,10 @@ class _HomePageState extends State<HomePage> {
                           width: double.infinity,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0xffE8630A),
+                            color: const Color(0xffE8630A),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text("Cappucino"),
                           ),
                         ),
@@ -135,10 +133,10 @@ class _HomePageState extends State<HomePage> {
                           width: double.infinity,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0xffE8630A),
+                            color: const Color(0xffE8630A),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Americano",
                             ),
@@ -150,10 +148,10 @@ class _HomePageState extends State<HomePage> {
                           width: double.infinity,
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Color(0xffE8630A),
+                            color: const Color(0xffE8630A),
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Center(
+                          child: const Center(
                             child: Text(
                               "Expresso",
                             ),
@@ -162,7 +160,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
-                  Expanded(
+                  const Expanded(
                     child: TabBarView(
                       children: [
                         TabBarCapp(),

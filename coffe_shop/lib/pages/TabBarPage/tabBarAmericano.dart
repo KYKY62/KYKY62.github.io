@@ -19,7 +19,7 @@ class TabBarAmericano extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   CappucinoCategories(
                     name: "Mocha",
                     desc: "With chocolate mixed with espresso and milk.",

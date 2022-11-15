@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
+// ignore_for_file: prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
 
@@ -8,7 +8,9 @@ class CappucinoCategories extends StatelessWidget {
   final price;
   final gambar;
 
-  CappucinoCategories({this.name, this.desc, this.price, this.gambar});
+  const CappucinoCategories(
+      {Key? key, this.name, this.desc, this.price, this.gambar})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,14 +24,14 @@ class CappucinoCategories extends StatelessWidget {
           width: 189,
           height: 210,
           decoration: BoxDecoration(
-            color: Color(0xffFFF6EA),
+            color: const Color(0xffFFF6EA),
             borderRadius: BorderRadius.circular(12),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12),
                 ),
@@ -41,23 +43,23 @@ class CappucinoCategories extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Text(
                   name,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: Colors.brown,
                       fontSize: 18,
                       fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Padding(
                 padding: const EdgeInsets.only(left: 5),
                 child: Text(
                   desc,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.brown,
                     fontSize: 12,
                     fontWeight: FontWeight.w400,
@@ -65,16 +67,16 @@ class CappucinoCategories extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 15),
+              const SizedBox(height: 15),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
                     child: Container(
-                      margin: EdgeInsets.only(left: 5),
+                      margin: const EdgeInsets.only(left: 5),
                       child: Text(
                         price,
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -82,16 +84,16 @@ class CappucinoCategories extends StatelessWidget {
                   Container(
                     width: 34,
                     height: 34,
-                    margin: EdgeInsets.only(
+                    margin: const EdgeInsets.only(
                       right: 5,
                     ),
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       color: Color(0xffE8630A),
                     ),
                     child: GestureDetector(
                       onTap: () {},
-                      child: Icon(Icons.add),
+                      child: const Icon(Icons.add),
                     ),
                   )
                 ],

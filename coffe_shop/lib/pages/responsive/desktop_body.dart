@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:coffe_shop/pages/TabBarPage/tabBarAmericano.dart';
 import 'package:coffe_shop/pages/TabBarPage/tabBarCapp.dart';
 import 'package:coffe_shop/pages/TabBarPage/tabBarExpresso.dart';
@@ -20,7 +18,7 @@ class DesktopBody extends StatelessWidget {
               padding: const EdgeInsets.only(top: 15, left: 20, right: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+                children: const [
                   Text(
                     "Search Your",
                     style: TextStyle(
@@ -41,7 +39,7 @@ class DesktopBody extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 40),
+            const SizedBox(height: 40),
             //todo Search Bar
             Padding(
               padding: const EdgeInsets.only(right: 20, left: 20),
@@ -56,9 +54,9 @@ class DesktopBody extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           icon: Icon(Icons.search),
                           hintText: "Find Your Coffe",
                           hintStyle: TextStyle(
@@ -74,11 +72,11 @@ class DesktopBody extends StatelessWidget {
                     height: 40,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(12),
-                      color: Color(0xffE8630A),
+                      color: const Color(0xffE8630A),
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.sort,
                         color: Colors.white,
                       ),
@@ -87,9 +85,9 @@ class DesktopBody extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.only(right: 20, left: 20, bottom: 20),
+            const SizedBox(height: 30),
+            const Padding(
+              padding: EdgeInsets.only(right: 20, left: 20, bottom: 20),
               child: Text(
                 "Categories",
                 style: TextStyle(
@@ -109,10 +107,10 @@ class DesktopBody extends StatelessWidget {
                     width: double.infinity,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: Color(0xffE8630A),
+                      color: const Color(0xffE8630A),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text("Cappucino"),
                     ),
                   ),
@@ -122,10 +120,10 @@ class DesktopBody extends StatelessWidget {
                     width: double.infinity,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: Color(0xffE8630A),
+                      color: const Color(0xffE8630A),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Americano",
                       ),
@@ -137,10 +135,10 @@ class DesktopBody extends StatelessWidget {
                     width: double.infinity,
                     height: 40,
                     decoration: BoxDecoration(
-                      color: Color(0xffE8630A),
+                      color: const Color(0xffE8630A),
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Center(
+                    child: const Center(
                       child: Text(
                         "Expresso",
                       ),
@@ -149,7 +147,7 @@ class DesktopBody extends StatelessWidget {
                 ),
               ],
             ),
-            Expanded(
+            const Expanded(
               child: TabBarView(
                 children: [
                   TabBarCapp(),

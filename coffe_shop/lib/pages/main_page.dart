@@ -1,5 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors, non_constant_identifier_names, prefer_const_constructors, dead_code
-
 import 'package:coffe_shop/pages/favorite_page.dart';
 import 'package:coffe_shop/pages/home_page.dart';
 import 'package:coffe_shop/pages/notif_page.dart';
@@ -8,6 +6,8 @@ import 'package:coffe_shop/pages/shop_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
+
   @override
   State<MainPage> createState() => _MainPageState();
 }
@@ -17,11 +17,11 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    Widget CustomNavBar() {
+    Widget customNavBar() {
       return BottomAppBar(
         child: BottomNavigationBar(
           elevation: 0,
-          backgroundColor: Color(0xffEDE6DB),
+          backgroundColor: const Color(0xffEDE6DB),
           type: BottomNavigationBarType.fixed,
           currentIndex: currentIndex,
           onTap: (value) {
@@ -32,50 +32,60 @@ class _MainPageState extends State<MainPage> {
           items: [
             BottomNavigationBarItem(
               icon: Container(
-                margin: EdgeInsets.only(top: 20, bottom: 10),
+                margin: const EdgeInsets.only(top: 20, bottom: 10),
                 child: Icon(
                   Icons.home,
-                  color: currentIndex == 0 ? Color(0xffE8630A) : Colors.black,
+                  color: currentIndex == 0
+                      ? const Color(0xffE8630A)
+                      : Colors.black,
                 ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Container(
-                margin: EdgeInsets.only(top: 20, bottom: 10),
+                margin: const EdgeInsets.only(top: 20, bottom: 10),
                 child: Icon(
                   Icons.shopping_cart_outlined,
-                  color: currentIndex == 1 ? Color(0xffE8630A) : Colors.black,
+                  color: currentIndex == 1
+                      ? const Color(0xffE8630A)
+                      : Colors.black,
                 ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Container(
-                margin: EdgeInsets.only(top: 20, bottom: 10),
+                margin: const EdgeInsets.only(top: 20, bottom: 10),
                 child: Icon(
                   Icons.notifications_none,
-                  color: currentIndex == 2 ? Color(0xffE8630A) : Colors.black,
+                  color: currentIndex == 2
+                      ? const Color(0xffE8630A)
+                      : Colors.black,
                 ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Container(
-                margin: EdgeInsets.only(top: 20, bottom: 10),
+                margin: const EdgeInsets.only(top: 20, bottom: 10),
                 child: Icon(
                   Icons.favorite_border,
-                  color: currentIndex == 3 ? Color(0xffE8630A) : Colors.black,
+                  color: currentIndex == 3
+                      ? const Color(0xffE8630A)
+                      : Colors.black,
                 ),
               ),
               label: '',
             ),
             BottomNavigationBarItem(
               icon: Container(
-                margin: EdgeInsets.only(top: 20, bottom: 10),
+                margin: const EdgeInsets.only(top: 20, bottom: 10),
                 child: Icon(
                   Icons.people_outline,
-                  color: currentIndex == 4 ? Color(0xffE8630A) : Colors.black,
+                  color: currentIndex == 4
+                      ? const Color(0xffE8630A)
+                      : Colors.black,
                 ),
               ),
               label: '',
@@ -85,32 +95,27 @@ class _MainPageState extends State<MainPage> {
       );
     }
 
-    Widget Body() {
+    Widget body() {
       switch (currentIndex) {
         case 0:
-          return HomePage();
-          break;
+          return const HomePage();
         case 1:
           return ShopPage();
-          break;
         case 2:
-          return NotifPage();
-          break;
+          return const NotifPage();
         case 3:
-          return FavoritePage();
-          break;
+          return const FavoritePage();
         case 4:
-          return ProfilePage();
-          break;
+          return const ProfilePage();
         default:
-          return HomePage();
+          return const HomePage();
       }
     }
 
     return Scaffold(
-      backgroundColor: Color(0xffEDE6DB),
-      bottomNavigationBar: CustomNavBar(),
-      body: Body(),
+      backgroundColor: const Color(0xffEDE6DB),
+      bottomNavigationBar: customNavBar(),
+      body: body(),
     );
   }
 }
